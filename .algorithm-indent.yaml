@@ -1,0 +1,20 @@
+specialBeginEnd:
+  specialBeforeCommand: 1
+  IF:
+    begin: '\\IF'
+    middle: '\\ELSE'
+    end: '\\ENDIF'
+    lookForThis: 1
+  If:
+    begin: '\\If'
+    middle: '\\Else'
+    end: '\\EndIf'
+    lookForThis: 1
+  FOR:
+    begin: '\\FOR'
+    end: '\\ENDFOR'
+    lookForThis: 1
+  For:
+    begin: '\\For'
+    end: '\\EndFor'
+    lookForThis: 1

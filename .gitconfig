@@ -1,0 +1,18 @@
+[core]
+	excludesFile = ~/.gitignore
+	quotepath = false
+[user]
+	email = meet.leiyu@gmail.com
+	name = yusanshi
+	signingkey = E642B0AA9925AC9F
+[commit]
+	gpgsign = true
+[alias]
+	difft = !GIT_EXTERNAL_DIFF=difft git diff
+	s = status
+	r = remote -v
+	l = log
+	b = branch -av
+	d = diff
+[init]
+	defaultBranch = main
