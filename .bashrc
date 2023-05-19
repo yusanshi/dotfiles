@@ -148,7 +148,7 @@ alias update='sudo apt update'
 alias upgrade='sudo aptitude safe-upgrade'
 
 alias chromium-fresh="chromium-browser --temp-profile"
-alias airserver=uxplay
+alias airserver="uxplay -n airserver"
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
