@@ -4,7 +4,7 @@ Refer: <https://www.atlassian.com/git/tutorials/dotfiles>
 
 ```bash
 cd ~
-git clone --bare https://github.com/yusanshi/dotfiles .dotfiles
+git clone --bare git@github.com:yusanshi/dotfiles.git .dotfiles
 echo 'alias gitdf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"' >> .bashrc
 source .bashrc
 gitdf config --local status.showUntrackedFiles no
