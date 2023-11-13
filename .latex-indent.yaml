@@ -1,3 +1,4 @@
+maxNumberOfBackUps: 3
 specialBeginEnd:
   specialBeforeCommand: 1
   IF:

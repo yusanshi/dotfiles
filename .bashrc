@@ -126,6 +126,8 @@ if [ "$TERM" = "linux" ] || [ "$TERM" = "screen" ]; then
     export LS_COLORS=$LS_COLORS:'di=01;36'
 fi
 
+export LS_COLORS=$LS_COLORS:'so=01;33'
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -148,7 +150,7 @@ alias update='sudo apt update'
 alias upgrade='sudo aptitude safe-upgrade'
 
 alias chromium-fresh="chromium-browser --temp-profile"
-alias airserver="uxplay -n airserver"
+alias airserver="uxplay -n airserver -p"
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
