@@ -17,5 +17,5 @@ gitdf show main:.bashrc
 gitdf show main:.bashrc | cat
 
 # add part of changes in a file
-git add -p .bashrc # y: add, n: not add, q: quit, not add current and following
+gitdf add -p .bashrc # y: add, n: not add, q: quit, not add current and following
 ```

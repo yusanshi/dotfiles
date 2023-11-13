@@ -56,11 +56,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-# fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -126,6 +121,7 @@ if [ "$TERM" = "linux" ] || [ "$TERM" = "screen" ]; then
     export LS_COLORS=$LS_COLORS:'di=01;36'
 fi
 
+# fix tab-completion-prefix color
 export LS_COLORS=$LS_COLORS:'so=01;33'
 
 export VISUAL=vim
@@ -133,37 +129,14 @@ export EDITOR="$VISUAL"
 
 lso() { ls -l "$@" | awk '{k=0;for(i=0;i<=8;i++)k+=((substr($1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(" %0o ",k);print}'; }
 
-. $HOME/z/z.sh
 . ~/set_proxy.sh
 
-alias restart-proxy="pkill clash-linux-amd; $HOME/clash-linux-amd64-v3"
-alias save-vm="VBoxManage controlvm 'Windows 10 LTSC' savestate"
-
 bind '"\C-h": backward-kill-word'
-#bind '"\e[1;5D": backward-word'
-#bind '"\e[1;5C": forward-word'
-
 
 alias c='clear'
 alias update='sudo apt update'
 #alias upgrade='sudo apt upgrade'
 alias upgrade='sudo aptitude safe-upgrade'
 
-alias chromium-fresh="chromium-browser --temp-profile"
-alias airserver="uxplay -n airserver -p"
-
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
-. "$HOME/.cargo/env"
-
-alias input="sleep 3 && xdotool type"
-
 alias cat="bat -pp"
-alias gitdf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
+alias gitdf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
